@@ -3,8 +3,19 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+    max_whole_batches = None
 
+    for ingredient in recipe.keys():
+        try:
+            if recipe[ingredient] > ingredients[ingredient]:
+                return 0
+            
+            if max_whole_batches == None or ingredients[ingredient] // recipe[ingredient] < max_whole_batches:
+                max_whole_batches = ingredients[ingredient] // recipe[ingredient]
+        except KeyError:
+            return 0
+
+    return max_whole_batches
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
