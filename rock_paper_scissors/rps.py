@@ -40,7 +40,7 @@ def rock_paper_scissors(n):
             # consists of 3^(n-2) rocks, 3^(n-2) papers, and 3^(n-2) scissors, the second additional run (if there is one)
             # consists of 3^(n-3) rocks, then papers, then scissors; and so on.
             if j % pow(3, additional_runs - 1 - i) == pow(3, additional_runs - 1 - i) - 1:
-                possible_play_index = possible_play_index + 1 if possible_play_index < 2 else 0
+                possible_play_index = possible_play_index + 1 if possible_play_index < 2 else 0 # ensures possible_play_index loops correctly
 
     return output
 
